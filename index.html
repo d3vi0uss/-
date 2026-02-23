@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimStrike - Browser Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen"></div>
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <h1>SimStrike</h1>
+      <div id="profile-mini"></div>
+      <nav id="nav"></nav>
+      <div class="sidebar-controls">
+        <button id="toggle-theme">🌓 Theme</button>
+        <button id="toggle-sound">🔊 Sound</button>
+        <button id="logout">Logout</button>
+      </div>
+      <div id="seed-panel" class="seed-panel"></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>Balance: <strong id="balance"></strong></div>
+        <div>Bank: <strong id="bank-balance"></strong></div>
+        <div>XP: <strong id="xp"></strong> | Lv <strong id="level"></strong> <span id="rank"></span></div>
+        <div>Net Worth: <strong id="net-worth"></strong></div>
+      </header>
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
