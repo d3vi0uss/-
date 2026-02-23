@@ -1,0 +1,145 @@
+:root {
+  --bg: #07060f;
+  --bg2: #120b21;
+  --panel: #130f22;
+  --panel2: #1b1430;
+  --panel3: #251947;
+  --text: #f2edff;
+  --muted: #b8a7e2;
+  --accent: #9e6dff;
+  --accent-2: #6f39e6;
+  --good: #59e3a1;
+  --bad: #ff6a91;
+}
+body.light {
+  --bg: #f5f1ff;
+  --bg2: #ece4ff;
+  --panel: #ffffff;
+  --panel2: #f3ecff;
+  --panel3: #e9deff;
+  --text: #1f1338;
+  --muted: #654f93;
+  --accent: #7d4eff;
+  --accent-2: #6130d6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% -10%, #3d1a7a66 0%, transparent 40%),
+    radial-gradient(circle at 85% 0%, #5828b455 0%, transparent 35%),
+    linear-gradient(145deg, var(--bg), var(--bg2));
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+.hidden { display: none !important; }
+.app { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+.sidebar {
+  padding: 16px;
+  background: linear-gradient(180deg, #110d22, #090711);
+  border-right: 1px solid #3a2860;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+nav { display: grid; gap: 8px; margin: 14px 0; }
+nav button, .sidebar button, .btn {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel3) 80%, #fff 4%), var(--panel2));
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, #33224f);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow:
+    inset 0 1px 0 #ffffff22,
+    0 4px 14px #6f39e633;
+  transition: 0.2s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+button:hover {
+  border-color: color-mix(in srgb, var(--accent) 70%, #fff);
+  box-shadow:
+    inset 0 1px 0 #ffffff33,
+    0 0 0 1px #a881ff33,
+    0 10px 20px #5e2ad266;
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow:
+    inset 0 1px 0 #ffffff22,
+    0 3px 10px #4f25af66;
+}
+main { padding: 14px; }
+.topbar {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  background: color-mix(in srgb, var(--panel) 90%, #ffffff 2%);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid #3b2a60;
+  box-shadow: 0 8px 20px #00000033;
+}
+.card {
+  background: color-mix(in srgb, var(--panel) 94%, #ffffff 2%);
+  border: 1px solid #3c2c63;
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 12px;
+  box-shadow: 0 10px 24px #00000030;
+}
+.grid { display: grid; gap: 10px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+input, select {
+  background: #0f0b1f;
+  color: var(--text);
+  border: 1px solid #4a3578;
+  border-radius: 8px;
+  padding: 8px;
+}
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  max-height: 420px;
+  overflow: auto;
+}
+.item {
+  background: #120d24;
+  border: 2px solid #5a6070;
+  border-radius: 10px;
+  padding: 6px;
+  font-size: 12px;
+}
+.rarity-consumer{border-color:#b2bfcf}.rarity-industrial{border-color:#79b7ff}.rarity-milspec{border-color:#6578ff}
+.rarity-restricted{border-color:#a661ff}.rarity-classified{border-color:#ff4dd9}.rarity-covert{border-color:#ff5a4a}
+.rarity-exceedinglyrare{border-color:#ffd95f; box-shadow:0 0 12px #ffd95f99; animation:pulse 1s infinite alternate;}
+@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.02)}}
+.auth-screen { max-width: 480px; margin: 10vh auto; background: var(--panel); padding: 16px; border-radius: 14px; }
+.auth-screen form { display: grid; gap: 8px; }
+.case-strip, .roulette-wheel, .slots-reels, .plinko-board, .crash-graph {
+  min-height: 100px;
+  border: 1px dashed #44507e;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+.log { max-height: 160px; overflow: auto; font-size: 12px; color: var(--muted); }
+.badge {
+  background: linear-gradient(180deg, #6242b1, #3d2a72);
+  color: #f6f0ff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #8760ec;
+}
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+}
