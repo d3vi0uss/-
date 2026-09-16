@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CASE CRASH // Clicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Case Crash home">
+          <span class="brand-mark">✦</span><span>CASE<br /><b>CRASH</b></span>
+        </a>
+        <div class="season"><span class="live-dot"></span> OPERATION: SHATTERED MARKET</div>
+        <div class="wallet"><span class="wallet-label">BALANCE</span><strong id="balance">$0</strong><span class="cash-icon">$</span></div>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">THE UNOFFICIAL CASE-OPENING CLICKER</p>
+          <h1>BREAK CASES.<br /><em>MAKE BANK.</em></h1>
+          <p class="hero-text">Smash cases, collect cash, and build the most overpowered loadout on the market.</p>
+          <div class="stat-row">
+            <div><span>PER HIT</span><b id="perHit">$1</b></div>
+            <div><span>PER SECOND</span><b id="perSecond">$0</b></div>
+            <div><span>CASES CRASHED</span><b id="casesCrushed">0</b></div>
+          </div>
+        </div>
+
+        <div class="smash-zone">
+          <button id="caseButton" class="case-button" aria-label="Smash case">
+            <span class="case-glow"></span>
+            <span class="case-lid"></span>
+            <span class="case-body"><i>✦</i><b>WEAPON<br />CASE</b><small>CONTRABAND</small></span>
+            <span class="case-handle"></span>
+          </button>
+          <p class="smash-prompt"><span>⌁</span> CLICK TO CRASH</p>
+          <div id="floaters" class="floaters" aria-hidden="true"></div>
+        </div>
+
+        <aside class="next-drop">
+          <p class="panel-kicker">NEXT CASE</p>
+          <div class="mini-case blue"><span>★</span></div>
+          <h3>PRISMA 2</h3>
+          <p>Break progress</p>
+          <div class="progress"><i id="caseProgress"></i></div>
+          <small id="progressText">0 / 25 hits</small>
+        </aside>
+      </section>
+
+      <section class="content-grid">
+        <section class="upgrades panel">
+          <div class="section-heading"><div><p class="eyebrow">LOADOUT</p><h2>UPGRADES</h2></div><span id="upgradeCount">0 / 6 OWNED</span></div>
+          <div id="upgradeList" class="upgrade-list"></div>
+        </section>
+        <aside class="activity panel">
+          <div class="section-heading"><div><p class="eyebrow">LIVE FEED</p><h2>MARKET PULSE</h2></div><button id="soundToggle" class="icon-button" title="Toggle sound">♬</button></div>
+          <div class="feed"><p><span class="feed-icon amber">◆</span><b>Rare case spotted</b><small>just now</small></p><p><span class="feed-icon violet">◈</span><b>Sticker value +18%</b><small>2m ago</small></p><p><span class="feed-icon blue">✦</span><b>Supply drop incoming</b><small>8m ago</small></p></div>
+          <div class="streak"><span>COMBO</span><b id="combo">x1.0</b><i><em id="comboMeter"></em></i><small>KEEP SMASHING</small></div>
+        </aside>
+      </section>
+
+      <footer><span>CASE CRASH © 2024</span><span>FAN-MADE CLICKER • NOT AFFILIATED WITH VALVE</span><span id="saveState">AUTO-SAVED</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
