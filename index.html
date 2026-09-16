@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Crash — Locker Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#play" aria-label="Case Crash home"><span class="brand-bolt">↯</span><span>CASE<br /><b>CRASH</b></span></a>
+        <nav aria-label="Game sections"><a class="active" href="#play">PLAY</a><a href="#arsenal">ARSENAL</a><a href="#tree">SKILL TREE</a></nav>
+        <div class="resources"><div><small>CASH</small><strong id="cash">$0</strong></div><div class="coin"><small>COINS</small><strong id="coins">0</strong></div></div>
+      </header>
+
+      <section class="play-area" id="play">
+        <aside class="side-card contract-card"><p class="label">CURRENT CONTRACT</p><h2 id="caseName">CARGO<br />CACHE</h2><p id="caseDescription">Break open the first shipment.</p><div class="contract-meter"><i id="caseProgress"></i></div><small id="caseProgressText">0 / 40 BREAKS</small><div class="reward-line"><span>UNLOCK REWARD</span><b id="caseReward">$150</b></div></aside>
+
+        <section class="smash-stage">
+          <div class="stage-top"><span class="label">ACTIVE OPENER</span><b id="openerName">BARE HANDS</b><span id="hitValue">+$1 / HIT</span></div>
+          <div class="target-wrap">
+            <div class="impact-ring ring-one"></div><div class="impact-ring ring-two"></div>
+            <button class="case-button cargo" id="caseButton" aria-label="Break current case"><span class="handle"></span><span class="case-top"></span><span class="case-face"><i>✦</i><b id="caseBadge">CARGO<br />CACHE</b><small>FIELD ISSUE</small></span></button>
+            <div class="floaters" id="floaters" aria-hidden="true"></div>
+          </div>
+          <button class="break-callout" id="breakCallout"><span>⌖</span> BREAK THE CASE</button>
+          <div class="combo"><span>BREAK STREAK</span><b id="combo">x1.0</b><div><i id="comboMeter"></i></div><small id="comboText">KEEP THE PRESSURE ON</small></div>
+        </section>
+
+        <aside class="side-card run-card"><p class="label">TODAY'S RUN</p><div class="run-stat"><span>CASES BROKEN</span><b id="casesBroken">0</b></div><div class="run-stat"><span>BEST STREAK</span><b id="bestStreak">0</b></div><div class="run-stat"><span>PER SECOND</span><b id="perSecond">$0</b></div><p class="tip">TIP <span>Cash buys gear. Coins reset your run into permanent power.</span></p></aside>
+      </section>
+
+      <section class="board-section" id="arsenal">
+        <div class="section-title"><div><p class="label">THE LOCKER</p><h1>BUILD YOUR <em>BREAKING KIT</em></h1></div><p>Earn enough cash to open the dealer's counter. Better openers make every break hit harder.</p></div>
+        <div class="progress-strip"><span><b id="totalCash">$0</b> LIFETIME CASH</span><div><i id="shopProgress"></i></div><strong id="shopStatus">DEALER LOCKED · $500 TO GO</strong></div>
+        <div class="kit-grid">
+          <section class="panel upgrades-panel"><div class="panel-head"><h2>QUICK FIXES</h2><span id="upgradeCount">0 / 6</span></div><div id="upgradeList" class="upgrade-list"></div></section>
+          <section class="panel shop-panel" id="shopPanel"><div class="panel-head"><h2>OPENER DEALER</h2><span class="locked-pill" id="shopPill">LOCKED</span></div><p class="shop-intro" id="shopIntro">Dealer access arrives at $500 lifetime cash.</p><div id="shopList" class="shop-list"></div></section>
+        </div>
+      </section>
+
+      <section class="progression-grid">
+        <section class="panel case-route"><div class="panel-head"><div><p class="label">CASE ROUTE</p><h2>CHASE THE NEXT DROP</h2></div><span id="caseTier">TIER 1 / 4</span></div><div id="caseRoute" class="case-route-list"></div></section>
+        <section class="panel prestige-card"><p class="label">BLACK MARKET</p><h2>GO <em>OFF THE GRID</em></h2><p>Cash out this run for Blacksite Coins. Coins make every future run stronger.</p><div class="prestige-reward"><span>YOU'LL RECEIVE</span><b><i>◉</i> <span id="prestigeCoins">0</span></b><small>BLACKSITE COINS</small></div><button id="prestigeButton" class="prestige-button" disabled>REQUIRES $2,500 LIFETIME CASH</button><small class="reset-note">Resets cash, gear, cases, and opener collection. Permanent skill tree stays.</small></section>
+      </section>
+
+      <section class="tree-section panel" id="tree"><div class="panel-head"><div><p class="label">BLACKSITE TRAINING</p><h2>PERMANENT SKILL TREE</h2></div><span><i class="coin-dot">◉</i> <b id="treeCoins">0</b> AVAILABLE</span></div><p class="tree-copy">Spend Blacksite Coins on permanent training. Follow connected routes to specialize your next breaking run.</p><div id="skillTree" class="skill-tree"></div></section>
+
+      <footer><span>CASE CRASH // ORIGINAL TACTICAL CLICKER</span><span>FAN-MADE FICTION • NOT AFFILIATED WITH ANY GAME OR PLATFORM</span><span id="saveState">AUTO-SAVED</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
